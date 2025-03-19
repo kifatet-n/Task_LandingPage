@@ -1,201 +1,64 @@
-/*=============== GOOGLE FONTS ===============*/
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
-/*=============== VARIABLES CSS ===============*/
-:root {
-  --header-height: 3rem;
-  /*========== Colors ==========*/
-  --hue-color: 206;
-  --black-color: hsl(var(--hue-color), 4%, 4%);
-  --black-color-alt: hsl(var(--hue-color), 4%, 8%);
-  --title-color: hsl(var(--hue-color), 4%, 95%);
-  --text-color: hsl(var(--hue-color), 4%, 75%);
-  --text-color-light: hsl(var(--hue-color), 4%, 65%);
-  --white-color: #FFF;
-  --body-color: hsl(var(--hue-color), 4%, 6%);
-  --container-color: hsl(var(--hue-color), 4%, 10%);
-  --text-gradient: linear-gradient(hsl(var(--hue-color), 4%, 24%), hsl(var(--hue-color), 4%, 8%));
-  --scroll-thumb-color: hsl(var(--hue-color), 4%, 16%);
-  --scroll-thumb-color-alt: hsl(var(--hue-color), 4%, 20%);
-  /*========== Font and typography ==========*/
-  --body-font: 'Poppins', sans-serif;
-  --biggest-font-size: 5rem;
-  --bigger-font-size: 3.5rem;
-  --big-font-size: 2.5rem;
-  --h2-font-size: 1.25rem;
-  --h3-font-size: 1.125rem;
-  --normal-font-size: .938rem;
-  --small-font-size: .813rem;
-  --smaller-font-size: .75rem;
-  --text-line-height: 2rem;
-  /*========== Font weight ==========*/
-  --font-medium: 500;
-  --font-semi-bold: 600;
-  /*========== Margenes Bottom ==========*/
-  --mb-0-5: .5rem;
-  --mb-0-75: .75rem;
-  --mb-1: 1rem;
-  --mb-1-5: 1.5rem;
-  --mb-2: 2rem;
-  --mb-2-5: 2.5rem;
-  /*========== z index ==========*/
-  --z-tooltip: 10;
-  --z-fixed: 100;
+.footer__container {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  row-gap: 2rem;
 }
-
-@media screen and (min-width: 968px) {
-  :root {
-    --biggest-font-size: 7.5rem;
-    --bigger-font-size: 4.5rem;
-    --big-font-size: 4rem;
-    --h2-font-size: 1.5rem;
-    --h3-font-size: 1.25rem;
-    --normal-font-size: 1rem;
-    --small-font-size: .875rem;
-    --smaller-font-size: .813rem;
-  }
+.footer__logo {
+  width: 2rem;
 }
-
-/*=============== BASE ===============*/
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+.footer__title {
+  font-size: var(--h3-font-size);
+  font-size: var(--font-medium);
+  margin-bottom: var(--mb-1);
 }
-
-html {
-  scroll-behavior: smooth;
+.footer__links {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
 }
-
-body {
-  margin: var(--header-height) 0 0 0;
-  font-family: var(--body-font);
-  font-size: var(--normal-font-size);
-  background-color: var(--body-color);
+.footer__link {
   color: var(--text-color);
 }
-
-h1, h2, h3 {
-  color: var(--title-color);
+.footer__link:hover {
+  color: var(--white-color);
 }
-
-ul {
-  list-style: none;
+.footer__form {
+  display: flex;
+  column-gap: 0.5rem;
+  background-color: var(--container-color);
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  margin-bottom: var(--mb-2);
 }
-
-a {
-  text-decoration: none;
+.footer__input {
+  background-color: (var(--container-color));
+  width: 90%;
+  color: var(--white-color);
 }
-
-button,
-input {
-  border: none;
-  outline: none;
+.footer__input::placeholder {
+  color: var(--text-color);
+  font-size: var(--normal-font-size);
+  font-family: var(--body-font);
 }
-
-button {
-  cursor: pointer;
+.footer__social {
+  display: flex;
+  column-gap: 1.25rem;
 }
-
-img {
-  max-width: 100%;
-  height: auto;
+.footer__social-link {
+  display: inline-flex;
+  color: var(--white-color);
+  background-color: var(--container-color);
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 1rem;
 }
-
-/*=============== REUSABLE CSS CLASSES ===============*/
-.section {
-  padding: 4rem 0 2rem;
+.footer__social-link:hover {
+  background-color: var(--black-color);
 }
-
-.section__title {
-  font-size: var(--bigger-font-size);
+.footer__copy {
+  margin-top: 5rem;
   text-align: center;
-  margin-bottom: var(--mb-2-5);
 }
-
-.section__title-gradient {
-  background: var(--text-gradient);
-  color: transparent;
-  -webkit-background-clip: text;
-  background-clip: text;
-}
-
-/*=============== LAYOUT ===============*/
-.main {
-  overflow: hidden;
-}
-
-.container {
-  max-width: 968px;
-  margin-left: var(--mb-1-5);
-  margin-right: var(--mb-1-5);
-}
-
-.grid {
-  display: grid;
-}
-
-
-.footer__container{
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    row-gap: 2rem;
-}
-.footer__logo{
-    width: 2rem;
-
-}
-.footer__title{
-    font-size: var(--h3-font-size);
-    font-size: var(--font-medium);
-    margin-bottom: var(--mb-1);
-}
-.footer__links{
-    display: flex;
-    flex-direction: column;
-    row-gap: .5rem;
-}
-.footer__link{
-    color: var(--text-color);
-}
-.footer__link:hover{
-    color: var(--white-color);
-}
-.footer__form{
-    display: flex;
-    column-gap: .5rem;
-    background-color: var(--container-color);
-    padding: .5rem .75rem;
-    border-radius: .5rem;
-    margin-bottom: var(--mb-2);
-}
-.footer__input{
-    background-color: (var(--container-color));
-    width: 90%;
-    color: var(--white-color);
-}
-.footer__input::placeholder{
-    color: var(--text-color);
-    font-size: var(--normal-font-size);
-    font-family: var(--body-font);
-}
-.footer__social{
-    display: flex;
-    column-gap: 1.25rem;
-}
-.footer__social-link{
-    display: inline-flex;
-    color: var(--white-color);
-    background-color: var(--container-color);
-    padding: .5rem;
-    border-radius: .25rem;
-    font-size: 1rem;
-}.footer__social-link:hover{
-    background-color: var(--black-color);
-}
-.footer__copy{
-    margin-top: 5rem;
-    text-align: center;
-}
-.footer__copy-link{
-    font-size: var(--smaller-font-size);
-    color: var(--text-color-light);
+.footer__copy-link {
+  font-size: var(--smaller-font-size);
+  color: var(--text-color-light);
 }
